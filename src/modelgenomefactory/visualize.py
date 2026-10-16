@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import html
+import math
 from typing import Any, Sequence
 
 _BG = "#0f1419"
@@ -87,8 +88,6 @@ def diff_matrix_svg(result: Any, *, cell: int = 34, label: int = 7) -> str:
                     fill, text, tcol = _MUT, str(len(d.edits)), "#0f1419"
                 else:
                     # 量变：按编辑条数的对数取深浅，避免「差 eps」与「差 20 处」同色。
-                    import math
-
                     t = math.log1p(len(d.edits)) / math.log1p(max_edits)
                     fill = f"rgba(78,161,255,{0.20 + 0.65 * t:.2f})"
                     text, tcol = str(len(d.edits)), _FG

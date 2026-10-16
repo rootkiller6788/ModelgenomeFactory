@@ -27,6 +27,7 @@ import argparse
 import json
 import os
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -75,8 +76,6 @@ def _note(from_products: bool) -> str:
 def _w(s: Any) -> int:
     """终端显示宽度。CJK 与全角标点占两列 —— `str.ljust` 只数字符，
     于是表头里的「模型」会让整张表错位两列。"""
-    import unicodedata
-
     return sum(2 if unicodedata.east_asian_width(c) in "WF" else 1 for c in str(s))
 
 
