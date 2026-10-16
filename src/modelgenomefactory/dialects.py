@@ -1089,11 +1089,13 @@ def render_manifest(
 
 
 def _fuse(kind: str, shapes: Sequence[tuple[int, ...]]) -> tuple[int, ...]:
-    """把若干分量张量合成融合形状。"""
-    if kind == "qkv":
+    """把若干分量张量合成融合形状。
+
+    `qkv` 与 `gate_up` 是**同一个动作**：把最后一个维度（输出维）加起来，前面的批次维
+    原样保留。`w13` 不同 —— 它沿**第 0 维**（MLP 的中间维）拼，所以单独一路。
+    """
+    if kind in ("qkv", "gate_up"):
         return shapes[0][:-1] + (sum(s[-1] for s in shapes),)
     if kind == "w13":
         return (sum(s[0] for s in shapes),) + shapes[0][1:]
-    if kind == "gate_up":
-        return shapes[0][:-1] + (sum(s[-1] for s in shapes),)
     raise ManifestError(f"未知融合策略 {kind!r}")
