@@ -840,7 +840,26 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
+def _force_utf8_stdio() -> None:
+    """把 stdout/stderr 钉成 UTF-8。
+
+    Windows 上 Python 在**管道**（而不是控制台）里的默认编码取自 ANSI 代码页 ——
+    简体中文机器上就是 GBK。本命令的输出里全是「↔」「²」「─」这类符号，GBK 编不了，
+    于是 `main.py --help | more`（甚至只是被别的进程 `capture_output`）会死在
+    `UnicodeEncodeError` 上：**只是把输出接进管道就看不了帮助**。
+
+    测试里读子进程时用的是 `encoding="utf-8"`，正好对上。控制台本身在
+    Python 3.6+ 走 `WriteConsoleW`，`.encoding` 本来就是 utf-8，这里 reconfigure
+    也无害。用 `getattr` 兜住没有 `reconfigure` 的替身（pytest 捕获、StringIO 等）。
+    """
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8")
+
+
 def main(argv: list[str] | None = None) -> int:
+    _force_utf8_stdio()
     args = build_parser().parse_args(argv)
     _anchor_args(args)
     try:
