@@ -774,17 +774,27 @@ FUSED_MARKERS = ("qkv_proj", "gate_up_proj", "gate_up", "w13")
 FUSED_MARKERS_LONGEST_FIRST = tuple(sorted(FUSED_MARKERS, key=len, reverse=True))
 
 
+#: `role_of` 的剥层前缀与判别式。这里编译一次 —— `role_of` 在 `canonical.add_tensor`
+#: 与 `genome.rebuild` 里**每个张量**都要走一遍，4 次 `re.sub` 每次都重新编译。
+_ROLE_STRIP = (
+    re.compile(r"^blocks\[\d+\]\."),
+    re.compile(r"^blocks\[\*\]\."),
+    re.compile(r"^experts\[\d+\]\."),
+    re.compile(r"^experts\[\*\]\."),
+)
+_ROLE_NORM = re.compile(r"^norm[12]\.")
+
+
 def role_of(path: str) -> str:
     """规范路径 → 粗粒度角色（用于代价分项与报告聚合）。"""
-    p = re.sub(r"^blocks\[\d+\]\.", "", path)
-    p = re.sub(r"^blocks\[\*\]\.", "", p)
-    p = re.sub(r"^experts\[\d+\]\.", "", p)
-    p = re.sub(r"^experts\[\*\]\.", "", p)
+    p = path
+    for strip in _ROLE_STRIP:
+        p = strip.sub("", p)
     if p in ("embed.weight", "head.weight"):
         return "embed"
     if p.startswith("pos_embed"):
         return "position"
-    if p.startswith("final_norm") or re.match(r"^norm[12]\.", p):
+    if p.startswith("final_norm") or _ROLE_NORM.match(p):
         return "norm"
     return p
 

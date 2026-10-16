@@ -44,6 +44,9 @@ __all__ = ["CanonicalError", "canonicalize", "block_groups_of", "pattern_of"]
 _BLOCK_RE = re.compile(r"^blocks\[(\d+)\]\.(.+)$")
 _BLOCK_TOKEN_RE = re.compile(r"blocks\[[^\]]+\]")
 
+#: 专家号：`ffn.experts[3].w1.weight` → 3。`_count_experts` 逐键扫，编译一次即可。
+_EXPERT_KEY = re.compile(r"ffn\.experts\[(\d+)\]")
+
 
 class CanonicalError(ValueError):
     """两条路径对不上，或结构自相矛盾。**一律报错**。"""
@@ -510,7 +513,7 @@ def _eps_key(eps: float) -> int:
 
 
 def _count_experts(blk: Mapping[str, Any]) -> int:
-    idxs = {int(m.group(1)) for k in blk if (m := re.search(r"ffn\.experts\[(\d+)\]", k))}
+    idxs = {int(m.group(1)) for k in blk if (m := _EXPERT_KEY.search(k))}
     return len(idxs)
 
 

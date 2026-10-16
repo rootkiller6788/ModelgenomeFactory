@@ -50,6 +50,11 @@ __all__ = [
 
 _MARKER_RE = re.compile(r"blocks\[([^\]]+)\]")
 
+#: `_role_bucket` 的前缀剥离与判别式。`_role_bucket` 在 `params_from_schema` 里
+#: 每个张量都要走一遍，内联写法会让这两条正则被反复编译。
+_BLOCKS_PREFIX = re.compile(r"^blocks\[[^\]]+\]\.")
+_NORM_PREFIX = re.compile(r"^norm[12]\.")
+
 
 def marker_count(marker: str, block_groups: Sequence[Sequence[int]]) -> int:
     """路径标记 → 实例数。`*` 指成员最多的那一组。"""
@@ -103,12 +108,12 @@ def params_from_schema(ir: CanonicalIR | Genome) -> tuple[int, tuple[tuple[str, 
 
 
 def _role_bucket(path: str) -> str:
-    p = re.sub(r"^blocks\[[^\]]+\]\.", "", path)
+    p = _BLOCKS_PREFIX.sub("", path)
     if p in ("embed.weight", "head.weight"):
         return "embed/head"
     if p.startswith("pos_embed"):
         return "position"
-    if p.startswith("final_norm") or re.match(r"^norm[12]\.", p):
+    if p.startswith("final_norm") or _NORM_PREFIX.match(p):
         return "norm"
     if p.startswith("attn."):
         return "attn"
