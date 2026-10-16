@@ -30,7 +30,7 @@ FLOPs 的口径必须**可逐位复现**，所以它是「矩阵乘 2·in·out �
 from __future__ import annotations
 
 import re
-from typing import Any, Mapping, Sequence
+from typing import Any, Sequence
 
 from .dialects import position_kind_of
 from .schema import CanonicalIR, Cost, Genome, RawStructure

@@ -31,7 +31,7 @@ diff 必须同时满足四条**精确**性质 —— 都是代数恒等式，不
 
 from __future__ import annotations
 
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any, Mapping
 
 from .genome import fingerprint, rebuild, shape_fingerprint
 from .schema import (

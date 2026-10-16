@@ -20,8 +20,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
-from .schema import utcnow
-
 __all__ = [
     "Node",
     "Edge",

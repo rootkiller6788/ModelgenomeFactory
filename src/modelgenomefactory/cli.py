@@ -33,10 +33,8 @@ from typing import Any, Sequence
 
 from . import compare as compare_mod
 from .config import DEFAULTS, expectations_of, load_config
-from .diff import apply as apply_diff
 from .diff import headline, summary as diff_summary
 from .extract import extract_model, load_zoo
-from .genome import same_primary
 from .pipeline import EXTRA_FILES, OUT_FILES, load_result, run_pipeline, write_outputs
 from .report import acceptance_checks, fmt, graph_lines, module_tree, tensor_schema
 

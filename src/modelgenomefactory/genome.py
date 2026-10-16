@@ -36,7 +36,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any, Iterable, Mapping
 
 from . import cost as cost_mod
 from .rng import canonical_json, sha256_text

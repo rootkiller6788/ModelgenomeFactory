@@ -36,7 +36,7 @@ import io
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any, Mapping, Sequence
 
 from . import compare as compare_mod
 from . import cost as cost_mod
@@ -46,18 +46,16 @@ from .dialects import CONDITIONAL_RULES, rule_coverage
 from .diff import structural_diff as diff_pair
 from .diff import headline, summary as diff_summary
 from .extract import ZooEntry, coverage_report, extract_model, load_config_file, load_zoo
-from .genome import build, dump as dump_genome, fingerprint, load as load_genome, shape_fingerprint, write as write_genome
+from .genome import build, fingerprint, load as load_genome, shape_fingerprint, write as write_genome
 from .lineage import (
-    COLLECT_NODE_ID,
     Lineage,
     add_diff_nodes,
     attach_mutation_parents,
     build_lineage,
     dumps as dumps_lineage,
-    diff_node,
     pair_key,
 )
-from .mutations import build_timelines, classify_diff
+from .mutations import build_timelines
 from .schema import CanonicalIR, Diff, FamilyTimeline, Genome, RawStructure, Version, utcnow
 
 __all__ = [

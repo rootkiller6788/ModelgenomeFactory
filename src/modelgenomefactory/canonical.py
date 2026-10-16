@@ -28,7 +28,7 @@ MoE**（`first_k_dense_replace=1`）。所以路径不能只有一种模式：
 from __future__ import annotations
 
 import re
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any, Mapping, Sequence
 
 from .dialects import ManifestError, parse_manifest, role_of
 from .schema import (

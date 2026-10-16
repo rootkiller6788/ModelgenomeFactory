@@ -31,8 +31,8 @@ manifest ────┘   （键名归一）    （结构归一）   （指纹�
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Any, Iterable, Mapping
+from dataclasses import dataclass
+from typing import Any
 
 __all__ = [
     "KINDS",

@@ -26,7 +26,6 @@ from typing import Any, Iterable, Mapping, Sequence
 from . import compare as compare_mod
 from .config import expectations_of
 from .diff import headline, summary as diff_summary
-from .genome import fingerprint, shape_fingerprint
 from .schema import Genome
 
 __all__ = ["Check", "acceptance_checks", "render_report", "fmt", "bar", "module_tree", "graph_lines", "tensor_schema"]
