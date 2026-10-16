@@ -102,7 +102,8 @@ def params_from_schema(ir: CanonicalIR | Genome) -> tuple[int, tuple[tuple[str, 
     for path, n, numel in expand_counts(ir):
         sub = n * numel
         total += sub
-        per_role[_role_bucket(path)] = per_role.get(_role_bucket(path), 0) + sub
+        bucket = _role_bucket(path)
+        per_role[bucket] = per_role.get(bucket, 0) + sub
     breakdown = tuple(sorted(per_role.items()))
     return total, breakdown
 
