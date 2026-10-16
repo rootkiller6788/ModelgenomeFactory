@@ -761,6 +761,11 @@ _SPLIT_PARTS = {
 #: 而 vLLM 的 MoE 布局沿用 Mixtral 的 `w13` / `gate_up` 习惯，两者并不统一。
 FUSED_MARKERS = ("qkv_proj", "gate_up_proj", "gate_up", "w13")
 
+#: 最长优先的匹配顺序。`gate_up` 是 `gate_up_proj` 的子串，短的先试会切错位置 ——
+#: 这条约束按常量排一次就够，不必在 `_fused_marker` 的每次调用里重排（它在
+#: 解析与渲染的热路径上，每条融合规则都要走一遍）。
+FUSED_MARKERS_LONGEST_FIRST = tuple(sorted(FUSED_MARKERS, key=len, reverse=True))
+
 
 def role_of(path: str) -> str:
     """规范路径 → 粗粒度角色（用于代价分项与报告聚合）。"""
@@ -954,7 +959,7 @@ def _fused_marker(template: str) -> str:
 
     必须**最长优先**匹配：`gate_up` 是 `gate_up_proj` 的子串，短的先试会切错位置。
     """
-    for marker in sorted(FUSED_MARKERS, key=len, reverse=True):
+    for marker in FUSED_MARKERS_LONGEST_FIRST:
         if f".{marker}." in template:
             return marker
     raise ManifestError(f"融合规则的模板 {template!r} 里找不到任何已知融合片段 {FUSED_MARKERS}")
