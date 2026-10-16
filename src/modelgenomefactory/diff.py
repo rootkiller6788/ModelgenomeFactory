@@ -375,10 +375,9 @@ def is_minimal(a: Genome, d: Diff) -> bool:
 def summary(d: Diff) -> dict[str, Any]:
     """按编辑种类与突变坐标聚合。报告里的「结构差异 N 处」就是它。"""
     by_kind: dict[str, int] = {}
-    for e in d.edits:
-        by_kind[e.kind] = by_kind.get(e.kind, 0) + 1
     by_coord: dict[str, int] = {}
     for e in d.edits:
+        by_kind[e.kind] = by_kind.get(e.kind, 0) + 1
         if e.coordinate:
             by_coord[e.coordinate] = by_coord.get(e.coordinate, 0) + 1
     return {
