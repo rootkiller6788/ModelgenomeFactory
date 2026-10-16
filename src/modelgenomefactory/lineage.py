@@ -196,16 +196,19 @@ class Lineage:
         return "\n".join(lines) + "\n"
 
     def to_ascii(self, *, limit: int = 40) -> str:
+        # `nodes` 是 property：每次访问都重新 `sorted` 一遍整个节点字典。
+        # 原先这里取了三次（切片、判断、算余数），取一次就够 —— 渲染期间这张图不变。
+        nodes = self.nodes
         lines: list[str] = []
-        for n in self.nodes[:limit]:
+        for n in nodes[:limit]:
             ps = self.parents(n.id)
             dep = "  " * min(self.depth(n.id), 6)
             head = f"{dep}{n.label}  [{n.kind}]"
             lines.append(head)
             if ps:
                 lines.append(f"{dep}  ← {', '.join(ps)}")
-        if len(self.nodes) > limit:
-            lines.append(f"… 还有 {len(self.nodes) - limit} 个节点（用 --dot 看全图）")
+        if len(nodes) > limit:
+            lines.append(f"… 还有 {len(nodes) - limit} 个节点（用 --dot 看全图）")
         return "\n".join(lines)
 
 
