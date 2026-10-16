@@ -701,12 +701,24 @@ CONDITIONAL_RULES: dict[str, str] = {
 }
 
 
+def _first_match(rules: Sequence[NameRule], name: str) -> tuple[NameRule, re.Match[str]] | None:
+    """按 `parse_manifest` 的优先级找出第一个命中的 `(规则, 匹配对象)`。
+
+    `parse_manifest` 里两处「第一命中即停」的循环逐字相同 —— 区别只在命中不了时
+    抛什么错。循环本身收在这里，错误消息留给调用方，两条消息都原样保留。
+    `_match_rule` 只要规则不要匹配对象，也走这条。
+    """
+    for rule in rules:
+        m = rule.source_regex().match(name)
+        if m:
+            return rule, m
+    return None
+
+
 def _match_rule(rules: Sequence[NameRule], name: str) -> NameRule | None:
     """按 `parse_manifest` 的优先级找出第一个命中的规则。"""
-    for rule in rules:
-        if rule.source_regex().match(name):
-            return rule
-    return None
+    hit = _first_match(rules, name)
+    return hit[0] if hit is not None else None
 
 
 def rule_coverage(manifests: Iterable[Mapping[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -832,12 +844,7 @@ def parse_manifest(
     for entry in manifest["tensors"]:
         name = entry["name"]
         shape = tuple(entry["shape"])
-        matched = None
-        for rule in rules:
-            m = rule.source_regex().match(name)
-            if m:
-                matched = (rule, m)
-                break
+        matched = _first_match(rules, name)
         if matched is None:
             raise ManifestError(f"{manifest.get('model')} / {layout}: 没有规则能解释参数名 {name!r}")
         rule, m = matched
@@ -855,12 +862,7 @@ def parse_manifest(
 
     for entry in manifest.get("absent_but_tied", []):
         name, shares = entry["name"], entry["shares_with"]
-        matched = None
-        for rule in rules:
-            m = rule.source_regex().match(name)
-            if m:
-                matched = (rule, m)
-                break
+        matched = _first_match(rules, name)
         if matched is None:
             raise ManifestError(f"{manifest.get('model')} / {layout}: 缺席共享张量 {name!r} 没有规则")
         rule, m = matched
