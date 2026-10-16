@@ -381,7 +381,7 @@ def test_expand_paths_does_not_reexpand_concrete_indices() -> None:
     ]
 
 
-def test_expand_paths_expands_the_star_wildcard_once(zoo) -> None:
+def test_expand_paths_expands_the_star_wildcard_once() -> None:
     out = dl.expand_paths(
         [{"path": "blocks[*].ffn.experts[*].gate_proj.weight", "shape": [4, 4]}],
         block_groups=[(0, 2)],

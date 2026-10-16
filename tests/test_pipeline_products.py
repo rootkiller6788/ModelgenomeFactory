@@ -19,8 +19,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pytest
-
 from modelgenomefactory import pipeline
 from modelgenomefactory.pipeline import EXTRA_FILES, GENOME_DIR, OUT_FILES
 

@@ -11,8 +11,6 @@ from __future__ import annotations
 
 import json
 
-import pytest
-
 from modelgenomefactory.genome import (
     dump,
     fingerprint,
@@ -22,7 +20,6 @@ from modelgenomefactory.genome import (
     primary,
     primary_diff_keys,
     rebuild,
-    same_primary,
     shape_fingerprint,
 )
 from modelgenomefactory.mutations import classify_diff, timeline_table
@@ -53,9 +50,7 @@ def test_skeleton_does_not_contain_scale_numbers(tiny) -> None:
     for name in ("base", "wide", "moe", "gqa", "op_swap"):
         sk = skeleton(tiny[name])
         blob = json.dumps(sk, ensure_ascii=False)
-        for n in ("4096", "32000", "32", "128"):
-            # 允许出现在路径里（`experts[*]` 之类不会有数字），但不允许出现在数值位。
-            pass
+        # 允许出现在路径里（`experts[*]` 之类不会有数字），但不允许出现在数值位。
         # 更直接的判据：把全部规模数值都换掉，骨架必须不变。
         assert blob == json.dumps(skeleton(tiny[name]), ensure_ascii=False)
 
