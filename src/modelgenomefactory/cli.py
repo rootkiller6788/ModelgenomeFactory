@@ -24,6 +24,7 @@ materialize / run / visualize          ← 写
 from __future__ import annotations
 
 import argparse
+import functools
 import json
 import os
 import sys
@@ -125,7 +126,11 @@ class _quiet_prose:
         return False
 
 
+@functools.lru_cache(maxsize=None)
 def _zoo() -> tuple[Any, ...]:
+    """zoo 索引。**只读、进程内不变**，所以缓存住：`cmd_zoo` 一条命令就要用它
+    三次，`_entry` 在「找不到模型」的路径上也要用它两次，每次都会重读并重解析
+    `zoo.json`（外加逐模型的 `config.json` 存在性检查）。"""
     return load_zoo(ROOT)
 
 
