@@ -762,7 +762,7 @@ def _coverage(result: Any) -> str:
             lines.append("")
             lines += _tbl(
                 ["门槛", "规则数", "举例"],
-                [[f"`{g}`", len(v), f"`{sorted(v)[0]}`"] for g, v in sorted(by_gate.items())],
+                [[f"`{g}`", len(v), f"`{min(v)}`"] for g, v in sorted(by_gate.items())],
             )
             lines.append("")
     return "\n".join(lines)

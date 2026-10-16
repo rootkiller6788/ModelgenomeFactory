@@ -573,7 +573,7 @@ def cmd_rules(args: argparse.Namespace) -> int:
             by_gate.setdefault(CONDITIONAL_RULES.get(src, "?"), []).append(src)
         print(f"\n  条件规则的门槛（{len(gates)} 条不同的规则，按名字去重）：")
         for gate, srcs in sorted(by_gate.items()):
-            print(f"    {gate:12s} {len(srcs):2d} 条  例：{sorted(srcs)[0]}")
+            print(f"    {gate:12s} {len(srcs):2d} 条  例：{min(srcs)}")
     if args.json:
         _emit_json({"layouts": rules, "conditional": dict(CONDITIONAL_RULES)})
     return 0
