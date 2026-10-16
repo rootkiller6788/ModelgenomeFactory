@@ -1,0 +1,87 @@
+{
+  "_comment": [
+    "对抗用例表。`adversarial` 子命令与 tests/test_adversarial.py 共用它 —— 于是",
+    "「命令行说全过的」与「测试说全过的」不可能是两套结论。",
+    "",
+    "verdict=accept：合法输入，**必须被接受**，且指纹必须与同模型的正式清单逐位相同。",
+    "  它们不可能是渲染器写的（张量顺序完全倒序），所以它们盯的是",
+    "  「解析器是不是只认得自己渲染出来的那一种写法」。",
+    "verdict=reject：必须报错，而且错误信息里必须出现 `expect` 这个片段。",
+    "  只断言「抛了异常」是不够的：一个 KeyError 也能让测试变绿，而它可能来自任何地方。",
+    "",
+    "这批清单由 _make_adversarial.py 一次性生成（形状取自真实清单，其余手工构造）后固化，",
+    "生成脚本已删除。要加用例就直接改这里 + 手工写清单。"
+  ],
+  "cases": [
+    {
+      "file": "gpt2.shuffled.json",
+      "model": "gpt2",
+      "verdict": "accept",
+      "why": "张量顺序完全倒序。渲染器永远按名字排序，所以这份清单不可能是它写的。盯「解析是不是与顺序无关」，以及 tied head（`absent_but_tied`）那条路径。",
+      "expect": ""
+    },
+    {
+      "file": "mixtral-8x7b.vllm_shuffled.json",
+      "model": "mixtral-8x7b",
+      "verdict": "accept",
+      "why": "vllm 布局 + 张量倒序。同时压住融合拆分（`w13_weight`）与专家下标两条路径的顺序无关性。",
+      "expect": ""
+    },
+    {
+      "file": "llama-2-7b.unknown_name.json",
+      "model": "llama-2-7b",
+      "verdict": "reject",
+      "why": "把 `gate_proj` 写成 `gate_projzz`。没有任何规则能解释它 —— 必须报错，绝不能跳过这个张量继续算（跳过会让参数量少一块，而报告里看不出来）。",
+      "expect": "没有规则能解释参数名"
+    },
+    {
+      "file": "llama-2-7b.wrong_role.json",
+      "model": "llama-2-7b",
+      "verdict": "reject",
+      "why": "把 `mlp.gate_proj` 写成 `mlp.gate` —— **名字匹配上了一条规则**（MoE 的 router 规则），但匹配错了。这一条证明「能匹配上」不等于「结构对」：挡住它的是块级结构校验（FFN 认不出来），不是名字表。",
+      "expect": "FFN 认不出来"
+    },
+    {
+      "file": "llama-2-7b.missing_layer.json",
+      "model": "llama-2-7b",
+      "verdict": "reject",
+      "why": "删掉第 31 层的全部张量。config 说 32 层，清单只有 31 层 —— 少了中间一代会让突变点算到错误的边界上，所以层数必须对质。",
+      "expect": "config 说 32 层"
+    },
+    {
+      "file": "llama-2-7b.tie_mismatch.json",
+      "model": "llama-2-7b",
+      "verdict": "reject",
+      "why": "把 `lm_head.weight` 挪进 `absent_but_tied`，即声明它与词嵌入共享。config 明说 `tie_word_embeddings=false` —— 两边对质必须报错。",
+      "expect": "权重绑定 tie_word_embeddings 两路对不上"
+    },
+    {
+      "file": "llama-3-8b.kv_transposed.json",
+      "model": "llama-3-8b",
+      "verdict": "reject",
+      "why": "GQA 的 `k_proj.weight` 写成 `[1024, 4096]`（真实是 `[4096, 1024]`）。转置过的权重在形状上「看着像」，只有按 `n_kv_heads·head_dim` 量一遍才拦得住。",
+      "expect": "k 投影宽度 两路对不上"
+    },
+    {
+      "file": "llama-3-8b.qkv_axis.json",
+      "model": "llama-3-8b",
+      "verdict": "reject",
+      "why": "融合 `qkv_proj.weight` 沿第 0 维拼接（真实 vLLM checkpoint 的约定），而本项目沿最后一维。宽度检查必须拦下来 —— 这是「拒绝而不是猜」的行为，同时也是一条**已知的接不上真实 checkpoint 的缝**（附录 B 记着）。",
+      "expect": "融合 qkv 宽度对不上"
+    },
+    {
+      "file": "mixtral-8x7b.ragged_expert.json",
+      "model": "mixtral-8x7b",
+      "verdict": "reject",
+      "why": "第 3 号专家的 `w2.weight` 比别的窄。**专家参差不齐是真实存在的结构缺陷，而它不会自己报错** —— 所以每个专家都要与第 0 号逐个量。",
+      "expect": "与专家 0 的"
+    },
+    {
+      "file": "qwen2-7b.no_qkv_bias.json",
+      "model": "qwen2-7b",
+      "verdict": "reject",
+      "why": "删掉 q/k/v 的 bias。Qwen2 的 config 里根本没有 `attention_bias` 这个键，偏置是 zoo 按官方 checkpoint 声明的**家族约定** —— 这一条证明那个约定不是「随便给的默认值」，而是可证伪的声明。",
+      "expect": "qkv 偏置 两路对不上"
+    }
+  ]
+}

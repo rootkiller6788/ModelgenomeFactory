@@ -1,0 +1,288 @@
+{
+  "_comment": [
+    "zoo 索引。每一条都是公开模型的**结构摘录**：data/zoo/<name>/config.json 逐字来自 source_url，",
+    "本项目只做静态结构分析，不下载权重、不训练。params_b 是**公开引用的四舍五入参数量**，",
+    "用来给「张量表求和」与「解析公式」两条独立路径做第三路旁证（见 cost.py 的三路互校）。",
+    "family/chain 定义家族内的演化链顺序；chain 是链上的序号，相邻两条构成一个「版本边界」。",
+    "dialects 是每个模型声明的命名方言 → 布局。hf 用的是**真实发布清单**的名字（Phi-3 官方清单",
+    "本身就是融合的 qkv_proj / gate_up_proj，这不是我们编的）；vllm 是按 vLLM 的融合约定重排后的",
+    "清单，用来演示「融合 / 转置」两条归一化路径 —— 它不是从 vLLM 仓库导出的真实权重名，",
+    "这一点必须写清楚。gpt2 只声明两种方言：vLLM 对 GPT-2 的命名没有权威公开约定，宁可不编。",
+    "conventions：config.json 里**没有**这些键、但官方 checkpoint 的参数名里有的家族约定（Qwen1.5/Qwen2/Qwen2.5 的 q/k/v 投影带偏置而 o_proj 不带；GPT-2 全带）。它们不是猜的默认值：填进去之后 canonicalize 会拿清单逐分量对质，声明错了立刻报错。",
+    "checkpoint：HF 的 safetensors.total 是逐字节数出来的外部真值，比四舍五入的 params_b 强得多。但它把**非参数缓冲**也算进去（GPT-2 的因果掩码、Llama-1/2 的 inv_freq），所以单列 buffers，等式写成 params + buffers == safetensors_total。"
+  ],
+  "dialects": {
+    "gpt2": {
+      "hf": "gpt2",
+      "custom": "custom_v1"
+    },
+    "llama-1-7b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "llama-2-7b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "llama-2-13b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "llama-3-8b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "llama-3-70b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "mistral-7b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "mixtral-8x7b": {
+      "hf": "mixtral",
+      "vllm": "vllm_mixtral",
+      "custom": "custom_v1"
+    },
+    "qwen1.5-7b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "qwen2-7b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "qwen2.5-7b": {
+      "hf": "llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "phi-3-mini-4k": {
+      "hf": "vllm_llama",
+      "vllm": "vllm_llama",
+      "custom": "custom_v1"
+    },
+    "deepseek-v2-lite": {
+      "hf": "deepseek",
+      "vllm": "deepseek",
+      "custom": "custom_v1"
+    }
+  },
+  "models": [
+    {
+      "name": "gpt2",
+      "family": "gpt2",
+      "chain": 1,
+      "release": "2019-02",
+      "params_b": 0.124,
+      "source_url": "https://huggingface.co/openai-community/gpt2/raw/main/config.json",
+      "note": "另一种命名体系：n_embd / n_layer / n_head / layer_norm_epsilon，且用可学习位置嵌入。它是「config 键名也要归一化」的证据。",
+      "checkpoint": {
+        "safetensors_total": 137022720,
+        "buffers": 12582912,
+        "params": 124439808,
+        "buffers_note": "12 层各一个 1×1×1024×1024 的因果掩码（attn.bias），共 12 × 1024² 个 bool 元素，不是参数"
+      },
+      "conventions": {
+        "qkv_bias": true,
+        "o_bias": true,
+        "mlp_bias": true
+      }
+    },
+    {
+      "name": "llama-1-7b",
+      "family": "llama",
+      "chain": 1,
+      "release": "2023-02",
+      "params_b": 6.74,
+      "source_url": "https://huggingface.co/huggyllama/llama-7b/raw/main/config.json",
+      "note": "Llama 1。config 里**没有** num_key_value_heads 键（默认等于 num_attention_heads，即 MHA），也没有 rope_theta 键（默认 10000）。",
+      "checkpoint": {
+        "safetensors_total": 6738417664,
+        "buffers": 2048,
+        "params": 6738415616,
+        "buffers_note": "rotary_emb.inv_freq：(head_dim/2) × n_heads = 64 × 32"
+      }
+    },
+    {
+      "name": "llama-2-7b",
+      "family": "llama",
+      "chain": 2,
+      "release": "2023-07",
+      "params_b": 6.74,
+      "source_url": "https://huggingface.co/NousResearch/Llama-2-7b-hf/raw/main/config.json",
+      "note": "与 llama-1-7b 结构同构，只差 rms_norm_eps 与 max_position_embeddings 两个标量。",
+      "checkpoint": {
+        "safetensors_total": 6738417664,
+        "buffers": 2048,
+        "params": 6738415616,
+        "buffers_note": "rotary_emb.inv_freq：64 × 32"
+      }
+    },
+    {
+      "name": "llama-2-13b",
+      "family": "llama",
+      "chain": 3,
+      "release": "2023-07",
+      "params_b": 13.02,
+      "source_url": "https://huggingface.co/NousResearch/Llama-2-13b-hf/raw/main/config.json",
+      "note": "同代缩放：层数 32→40、宽度 4096→5120，算子与连接不变。",
+      "checkpoint": {
+        "safetensors_total": 13015866880,
+        "buffers": 2560,
+        "params": 13015864320,
+        "buffers_note": "rotary_emb.inv_freq：64 × 40"
+      }
+    },
+    {
+      "name": "llama-3-8b",
+      "family": "llama",
+      "chain": 4,
+      "release": "2024-04",
+      "params_b": 8.03,
+      "source_url": "https://huggingface.co/NousResearch/Meta-Llama-3-8B/raw/main/config.json",
+      "note": "代际突变：num_key_value_heads 40→8，注意力算子变体从 MHA 变成 GQA；词表 32000→128256。",
+      "checkpoint": {
+        "safetensors_total": 8030261248,
+        "buffers": 0,
+        "params": 8030261248
+      }
+    },
+    {
+      "name": "llama-3-70b",
+      "family": "llama",
+      "chain": 5,
+      "release": "2024-04",
+      "params_b": 70.6,
+      "source_url": "https://huggingface.co/NousResearch/Meta-Llama-3-70B/raw/main/config.json",
+      "note": "同代缩放：层数 32→80、宽度 4096→8192，GQA 变体不变（kv 头数仍是 8，但 q/kv 比从 4 变成 8）。",
+      "checkpoint": {
+        "safetensors_total": 70553706496,
+        "buffers": 0,
+        "params": 70553706496
+      }
+    },
+    {
+      "name": "mistral-7b",
+      "family": "mistral",
+      "chain": 1,
+      "release": "2023-09",
+      "params_b": 7.24,
+      "source_url": "https://huggingface.co/mistralai/Mistral-7B-v0.1/raw/main/config.json",
+      "note": "与 llama-2-7b 同代同规模，但开了 sliding_window=4096，且 intermediate_size 11008→14336。",
+      "checkpoint": {
+        "safetensors_total": 7241732096,
+        "buffers": 0,
+        "params": 7241732096
+      }
+    },
+    {
+      "name": "mixtral-8x7b",
+      "family": "mistral",
+      "chain": 2,
+      "release": "2023-12",
+      "params_b": 46.7,
+      "source_url": "https://huggingface.co/mistralai/Mixtral-8x7B-v0.1/raw/main/config.json",
+      "note": "README 里那个 structural mutation 的真实样本：Dense FFN → MoE（8 专家 / top-2），同时 sliding_window 被去掉、rope_theta 10000→1000000。",
+      "checkpoint": {
+        "safetensors_total": 46702792704,
+        "buffers": 0,
+        "params": 46702792704
+      }
+    },
+    {
+      "name": "qwen1.5-7b",
+      "family": "qwen",
+      "chain": 1,
+      "release": "2024-02",
+      "params_b": 7.72,
+      "source_url": "https://huggingface.co/Qwen/Qwen1.5-7B/raw/main/config.json",
+      "note": "model_type 已经是 qwen2，但注意力仍是 MHA（num_key_value_heads=32）。",
+      "checkpoint": {
+        "safetensors_total": 7721324544,
+        "buffers": 0,
+        "params": 7721324544
+      },
+      "conventions": {
+        "qkv_bias": true,
+        "o_bias": false,
+        "mlp_bias": false
+      }
+    },
+    {
+      "name": "qwen2-7b",
+      "family": "qwen",
+      "chain": 2,
+      "release": "2024-06",
+      "params_b": 7.62,
+      "source_url": "https://huggingface.co/Qwen/Qwen2-7B/raw/main/config.json",
+      "note": "代际突变：MHA → GQA（32→4 kv 头），同时层数 32→28、宽度 4096→3584。",
+      "checkpoint": {
+        "safetensors_total": 7615616512,
+        "buffers": 0,
+        "params": 7615616512
+      },
+      "conventions": {
+        "qkv_bias": true,
+        "o_bias": false,
+        "mlp_bias": false
+      }
+    },
+    {
+      "name": "qwen2.5-7b",
+      "family": "qwen",
+      "chain": 3,
+      "release": "2024-09",
+      "params_b": 7.62,
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-7B/raw/main/config.json",
+      "note": "与 qwen2-7b **结构零差异**：唯一新增键是 use_mrope=false 与 transformers_version。这条是本项目最有信息量的结论之一。",
+      "checkpoint": {
+        "safetensors_total": 7615616512,
+        "buffers": 0,
+        "params": 7615616512
+      },
+      "conventions": {
+        "qkv_bias": true,
+        "o_bias": false,
+        "mlp_bias": false
+      }
+    },
+    {
+      "name": "phi-3-mini-4k",
+      "family": "phi",
+      "chain": 1,
+      "release": "2024-04",
+      "params_b": 3.82,
+      "source_url": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/raw/main/config.json",
+      "note": "**官方 checkpoint 自己就是融合布局**：注意力只有 qkv_proj、MLP 只有 gate_up_proj。融合不是我们编的方言，是真实存在的。",
+      "checkpoint": {
+        "safetensors_total": 3821079552,
+        "buffers": 0,
+        "params": 3821079552
+      }
+    },
+    {
+      "name": "deepseek-v2-lite",
+      "family": "deepseek",
+      "chain": 1,
+      "release": "2024-05",
+      "params_b": 15.7,
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V2-Lite/raw/main/config.json",
+      "note": "MLA 注意力（kv_lora_rank=512 / qk_nope_head_dim=128 / qk_rope_head_dim=64）+ 细粒度 MoE（64 路由专家 + 2 共享专家，top-6）+ first_k_dense_replace=1。算子变体与前 12 个完全不同。",
+      "checkpoint": {
+        "safetensors_total": 15706484224,
+        "buffers": 0,
+        "params": 15706484224
+      }
+    }
+  ]
+}

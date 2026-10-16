@@ -1,0 +1,2240 @@
+{
+  "absent_but_tied": [],
+  "dialect": "custom",
+  "layout": "custom_v1",
+  "model": "qwen2.5-7b",
+  "tensors": [
+    {
+      "name": "final_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.0.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.0.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.0.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.0.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.0.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.1.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.1.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.1.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.1.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.1.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.10.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.10.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.10.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.10.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.10.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.11.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.11.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.11.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.11.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.11.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.12.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.12.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.12.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.12.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.12.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.12.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.12.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.12.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.12.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.12.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.12.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.12.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.13.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.13.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.13.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.13.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.13.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.13.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.13.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.13.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.13.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.13.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.13.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.13.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.14.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.14.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.14.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.14.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.14.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.14.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.14.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.14.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.14.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.14.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.14.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.14.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.15.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.15.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.15.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.15.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.15.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.15.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.15.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.15.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.15.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.15.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.15.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.15.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.16.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.16.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.16.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.16.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.16.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.16.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.16.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.16.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.16.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.16.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.16.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.16.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.17.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.17.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.17.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.17.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.17.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.17.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.17.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.17.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.17.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.17.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.17.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.17.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.18.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.18.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.18.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.18.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.18.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.18.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.18.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.18.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.18.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.18.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.18.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.18.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.19.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.19.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.19.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.19.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.19.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.19.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.19.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.19.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.19.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.19.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.19.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.19.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.2.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.2.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.2.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.2.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.2.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.20.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.20.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.20.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.20.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.20.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.20.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.20.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.20.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.20.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.20.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.20.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.20.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.21.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.21.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.21.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.21.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.21.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.21.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.21.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.21.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.21.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.21.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.21.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.21.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.22.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.22.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.22.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.22.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.22.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.22.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.22.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.22.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.22.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.22.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.22.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.22.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.23.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.23.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.23.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.23.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.23.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.23.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.23.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.23.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.23.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.23.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.23.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.23.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.24.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.24.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.24.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.24.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.24.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.24.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.24.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.24.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.24.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.24.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.24.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.24.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.25.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.25.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.25.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.25.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.25.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.25.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.25.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.25.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.25.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.25.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.25.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.25.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.26.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.26.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.26.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.26.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.26.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.26.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.26.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.26.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.26.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.26.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.26.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.26.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.27.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.27.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.27.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.27.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.27.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.27.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.27.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.27.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.27.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.27.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.27.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.27.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.3.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.3.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.3.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.3.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.3.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.4.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.4.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.4.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.4.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.4.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.5.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.5.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.5.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.5.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.5.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.6.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.6.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.6.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.6.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.6.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.7.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.7.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.7.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.7.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.7.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.8.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.8.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.8.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.8.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.8.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wk",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wk.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wo",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wq",
+      "shape": [
+        3584,
+        3584
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wq.bias",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wv",
+      "shape": [
+        3584,
+        512
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wv.bias",
+      "shape": [
+        512
+      ]
+    },
+    {
+      "name": "layers.9.mlp.Wdown",
+      "shape": [
+        18944,
+        3584
+      ]
+    },
+    {
+      "name": "layers.9.mlp.Wgate",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.9.mlp.Wup",
+      "shape": [
+        3584,
+        18944
+      ]
+    },
+    {
+      "name": "layers.9.post_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "layers.9.pre_norm",
+      "shape": [
+        3584
+      ]
+    },
+    {
+      "name": "out_proj",
+      "shape": [
+        152064,
+        3584
+      ]
+    },
+    {
+      "name": "tok_emb",
+      "shape": [
+        152064,
+        3584
+      ]
+    }
+  ]
+}

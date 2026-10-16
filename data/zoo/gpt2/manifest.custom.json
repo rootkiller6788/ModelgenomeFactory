@@ -1,0 +1,1263 @@
+{
+  "absent_but_tied": [
+    {
+      "name": "out_proj",
+      "shares_with": "tok_emb"
+    }
+  ],
+  "dialect": "custom",
+  "layout": "custom_v1",
+  "model": "gpt2",
+  "tensors": [
+    {
+      "name": "final_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "final_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.0.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.0.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.0.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.0.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.0.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.1.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.1.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.1.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.1.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.1.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.10.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.10.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.10.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.10.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.10.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.11.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.11.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.11.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.11.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.11.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.2.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.2.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.2.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.2.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.2.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.3.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.3.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.3.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.3.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.3.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.4.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.4.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.4.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.4.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.4.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.5.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.5.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.5.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.5.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.5.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.6.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.6.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.6.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.6.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.6.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.7.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.7.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.7.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.7.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.7.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.8.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.8.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.8.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.8.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.8.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wk",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wk.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wo",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wo.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wq",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wq.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wv",
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "layers.9.attn.Wv.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.mlp.Wfc1",
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "layers.9.mlp.Wfc1.bias",
+      "shape": [
+        3072
+      ]
+    },
+    {
+      "name": "layers.9.mlp.Wfc2",
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "layers.9.mlp.Wfc2.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.post_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.post_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.pre_norm",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "layers.9.pre_norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    {
+      "name": "pos_emb",
+      "shape": [
+        1024,
+        768
+      ]
+    },
+    {
+      "name": "tok_emb",
+      "shape": [
+        50257,
+        768
+      ]
+    }
+  ]
+}

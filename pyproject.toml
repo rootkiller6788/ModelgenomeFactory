@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modelgenomefactory"
+version = "1.0.0"
+description = "ModelGenomeFactory —— 把模型从「一堆代码」变成可比较的结构基因（不训练，零第三方依赖）"
+# 核心链路只用标准库。requires-python 下限由 `math` 与 `functools` 的既有 API 决定，
+# 没有用到 3.12+ 才有的东西；写 3.11 是为了让它在更老的 CI 上也能跑。
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+# 重型接入点一律写成扩展点，不进核心链路。
+# 想读真实 checkpoint 的 safetensors 头（而不是本 zoo 里那份元数据）时需要它。
+safetensors = ["safetensors>=0.4"]
+plot = ["matplotlib>=3.8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

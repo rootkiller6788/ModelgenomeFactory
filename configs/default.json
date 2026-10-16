@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "全部阈值与口径都在这里，不要硬编码进代码。",
+    "expectations 是**设计期望**，允许被实测推翻 —— 报告里会逐条对照，",
+    "被推翻的那些是附录 B 里最值得看的部分。"
+  ],
+  "zoo": {
+    "index": "data/zoo/zoo.json"
+  },
+  "dialects": ["hf", "vllm", "custom"],
+  "cost": {
+    "seq_len": 2048,
+    "batch": 1,
+    "dtype_bytes": 2
+  },
+  "acceptance": {
+    "params_published_tolerance": 0.005,
+    "min_models": 12,
+    "min_dialects_per_model": 2,
+    "require_unknown_keys_empty": true,
+    "require_crosschecks_all_pass": true,
+    "require_diff_applies": true
+  },
+  "expectations": {
+    "llama_mutation_points": 1,
+    "qwen_mutation_points": 1,
+    "mistral_mutation_points": 1,
+    "qwen_last_boundary_is_zero_diff": true,
+    "min_full_isomorphic_classes": 1
+  },
+  "report": {
+    "headline_edits": 6,
+    "max_matrix_rows": 32
+  }
+}
