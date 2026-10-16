@@ -453,7 +453,6 @@ def cmd_mutations(args: argparse.Namespace) -> int:
     if args.json:
         _emit_json([t.to_dict() for t in tls])
     return 0
-    return 0
 
 
 def cmd_crosscheck(args: argparse.Namespace) -> int:
