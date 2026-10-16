@@ -38,6 +38,7 @@
 
 from __future__ import annotations
 
+import functools
 import re
 from dataclasses import dataclass
 from typing import Any, Iterable, Mapping, Sequence
@@ -366,9 +367,15 @@ class NameRule:
     split: str | None = None
     transpose: bool = False
 
+    # 这两个方法在 `parse_manifest` / `render_manifest` 里是 **张量 × 规则** 的内层循环，
+    # 每次调用都重新拼串 + `re.compile`。规则本身是 frozen dataclass、哈希按值算，
+    # 所以缓存挂在 `self` 上正合适：同值规则共用一份，返回的 `re.Pattern` 不可变、
+    # `.match()` 也不会留下状态，缓存出去是安全的。
+    @functools.lru_cache(maxsize=None)
     def source_regex(self) -> re.Pattern[str]:
         return re.compile("^" + _to_regex(self.source) + "$")
 
+    @functools.lru_cache(maxsize=None)
     def canonical_regex(self) -> re.Pattern[str]:
         return re.compile("^" + _to_regex(self.canonical[0]) + "$")
 
